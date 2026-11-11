@@ -38,8 +38,8 @@ DEST="$TARGET_ROOT/$NAME"
 if [ "$DEST" != "$SRC" ]; then
   rm -rf "$DEST"
   mkdir -p "$DEST"
-  # 复制时排除生成物
-  (cd "$SRC" && tar --exclude='__pycache__' --exclude='*.pyc' \
+  # 复制时排除生成物与版本库
+  (cd "$SRC" && tar --exclude='__pycache__' --exclude='*.pyc' --exclude='.git' \
       --exclude='assets/fonts.conf' --exclude='assets/fontconfig' -cf - .) \
     | (cd "$DEST" && tar -xf -)
 fi
