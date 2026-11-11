@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+assets/fonts.conf
+assets/fontconfig/
+.DS_Store
+Thumbs.db

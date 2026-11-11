@@ -1,0 +1,100 @@
+{
+  "$description": "endfield-deck 演示稿 token。逻辑像素 = 幻灯片像素。主题色由 accent_gen.py 注入，DSL 里写占位符 'ACCENT' / 'ACCENT_DEEP' / 'ACCENT_SOFT' / 'ACCENT_TINT' / 'ACCENT_FORE'。",
+
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "aspect": "16:9",
+    "margin": 60,
+    "contentWidth": 1160,
+    "headerBand": { "top": 60, "height": 34 },
+    "titleBand": { "top": 108, "bottom": 196 },
+    "bodyBand": { "top": 200, "bottom": 630 },
+    "footerBand": { "top": 660 },
+    "columns": {
+      "half": { "left": 578, "gap": 32, "right": 550 },
+      "textImage": { "left": 644, "gap": 36, "right": 480 },
+      "duo": { "left": 565, "gap": 30, "right": 565 }
+    }
+  },
+
+  "type": {
+    "$description": "投影可读性档：最小 16px；相邻两级至少差 3px，主链（主标→小标→正文→字段）至少差 4px。",
+    "coverMark": { "size": 96, "family": "Saira", "weight": 900 },
+    "coverTitle": { "size": 64, "family": "Noto Sans SC", "weight": 700 },
+    "heroNumber": { "size": 150, "max": 205, "family": "Saira", "weight": 900 },
+    "pageTitle": { "size": 40, "family": "Noto Sans SC", "weight": 700 },
+    "cardTitle": { "size": 26, "max": 30, "family": "Noto Sans SC", "weight": 700 },
+    "body": { "size": 20, "max": 24, "family": "Noto Sans SC", "weight": 400, "lineHeight": 1.5 },
+    "field": { "size": 16, "max": 17, "family": "Saira", "weight": 700, "letterSpacing": 2.6 },
+    "minimum": 16,
+    "minStep": 3,
+    "mainChainStep": 4
+  },
+
+  "spacing": {
+    "gap": { "tight": 16, "normal": 30, "wide": 36 },
+    "rule": 1,
+    "headerGap": 16,
+    "titleToRule": 12,
+    "ruleToBody": 26
+  },
+
+  "color": {
+    "$description": "语义角色。accent 四项由 accent_gen.py 按主题色派生后注入。",
+    "paper": "#F4F4F2",
+    "panel": "#FFFFFF",
+    "ink": "#161616",
+    "ink2": "#5C5C5C",
+    "ink2OnDark": "#A3A3A3",
+    "rule": "#D9D9D6",
+    "chip": "#E4E4E0",
+    "darkPaper": "#191919",
+    "accent": "PLACEHOLDER",
+    "accentDeep": "PLACEHOLDER",
+    "accentSoft": "PLACEHOLDER",
+    "accentTint": "PLACEHOLDER",
+    "accentFore": "PLACEHOLDER"
+  },
+
+  "ratio": {
+    "$description": "强调色面积上限。浅色强调色只做小块；深色强调色可作满版底但占比要受限。",
+    "lightMax": 0.15,
+    "darkMax": 0.40,
+    "midMax": 0.25,
+    "recommendedSplit": 0.375
+  },
+
+  "contrast": {
+    "$description": "WCAG 阈值。accent_gen.py 按此判定可用性。",
+    "bodyMin": 4.5,
+    "largeMin": 3.0,
+    "idealMin": 7.0
+  },
+
+  "pageTypes": {
+    "cover": { "name": "封面", "chars": "100-160" },
+    "thesis": { "name": "导语", "chars": "120-200" },
+    "points": { "name": "要点列表", "chars": "180-280" },
+    "timeline": { "name": "时间轴", "chars": "180-260" },
+    "metrics": { "name": "数据看板", "chars": "80-140" },
+    "split": { "name": "双栏对比", "chars": "200-280" },
+    "quote": { "name": "引言金句", "chars": "60-120" },
+    "climax": { "name": "高潮页", "chars": "80-160" },
+    "closing": { "name": "收尾", "chars": "80-140" }
+  },
+
+  "density": {
+    "$description": "投影建议：正文净字数 ÷ 260 字/分钟 ≈ 口播时长（含翻页停顿再乘 1.06）。",
+    "wordsPerMinute": 260,
+    "pauseFactor": 1.06,
+    "comfortPerPage": [150, 280]
+  },
+
+  "font": {
+    "latin": { "family": "Saira", "file": "assets/fonts/Saira.ttf", "license": "SIL OFL 1.1" },
+    "cjk": { "family": "Noto Sans SC", "fallback": ["Source Han Sans SC", "PingFang SC", "Microsoft YaHei"] },
+    "letterSpacingLatin": 2.6,
+    "uppercaseLatin": true
+  }
+}

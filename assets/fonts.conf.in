@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <!-- @SKILL_DIR@ 由安装脚本或 build_deck.py 自动替换成实际路径 -->
+  <dir>@SKILL_DIR@/assets/fonts</dir>
+  <dir>C:/Windows/Fonts</dir>
+  <dir>/System/Library/Fonts</dir>
+  <dir>/usr/share/fonts</dir>
+  <cachedir>@SKILL_DIR@/assets/fontconfig/cache</cachedir>
+  <match target="pattern">
+    <test qual="any" name="family"><string>Saira</string></test>
+    <edit name="family" mode="assign" binding="strong"><string>Saira</string></edit>
+  </match>
+</fontconfig>
