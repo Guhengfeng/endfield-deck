@@ -56,17 +56,21 @@ python scripts/count_words.py slides/                                           
 
 把整个 `endfield-deck/` 目录放进任一位置，然后在需要的项目里让助手加载它。
 
+**开箱即用 —— 包内已自带全部运行资源**：Saira 字体（含 OFL 许可证）、等高线纹理（墨版/白版）、演示稿 token、三主题色对照示例图，全部随包分发，**克隆或解压后不需要再联网下载任何东西**。
+
 **用户级（全局可用）**
 
 ```bash
-cp -r endfield-deck ~/.workbuddy/skills/
+bash endfield-deck/install.sh            # 装到 ~/.workbuddy/skills/（全局可用）
 ```
 
 **项目级（只在这个项目里用）**
 
 ```bash
-cp -r endfield-deck <你的项目>/.workbuddy/skills/
+bash endfield-deck/install.sh --project .   # 装到 ./.workbuddy/skills/
 ```
+
+（手工复制同样可用：`cp -r endfield-deck ~/.workbuddy/skills/`。脚本额外做一件事：按实际安装路径生成 `assets/fonts.conf`，因为 fontconfig 需要绝对路径。）
 
 **环境准备**（渲染需要字体配置）
 
@@ -178,6 +182,25 @@ endfield-deck/
 - 宽体大写英文配粗体中文，`//` 眉标
 - 编号、日期、计数都是真实数据
 - 1px 细线分区，不用投影、发光、渐变
+
+---
+
+## 发布与分发
+
+当前版本：**v0.1.0**（仓库内已打同名 tag）。
+
+| 产物 | 用途 |
+|---|---|
+| `endfield-deck/` 整个目录 | 直接放进 `~/.workbuddy/skills/` 或任一项目的 `.workbuddy/skills/` |
+| `endfield-deck-v0.1.0.zip` | 一键分发包（由 `git archive` 生成，路径前缀 `endfield-deck/`，解压即装） |
+
+zip 包的生成方式：
+
+```bash
+git archive --format=zip --prefix=endfield-deck/ -o endfield-deck-v0.1.0.zip v0.1.0
+```
+
+发布到 GitHub / SkillHub 时：把 `endfield-deck/` 作为仓库根目录推上去（或直接上传 zip），tag `v0.1.0` 作为首个发布点。
 
 ---
 
