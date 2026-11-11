@@ -5,6 +5,8 @@ description: "用「终末地风味」的工业科技感做可照读的演示稿
 
 # endfield-deck — 任意主题色的照读演示稿
 
+> 仓库：https://github.com/Guhengfeng/endfield-deck ｜ 发行版：https://github.com/Guhengfeng/endfield-deck/releases ｜ 版本：v0.1.1
+
 这个 skill 教你做**工业科技风的演示稿（PPTX）**：纸面加墨色、一种强调色、宽体英文配粗体中文、编号装饰、细线分区。
 
 它的三个核心能力：

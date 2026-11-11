@@ -75,21 +75,27 @@ python scripts/clone_case.py --dst ./slides --accent "#1E88E5"
 
 ## 安装
 
-把整个 `endfield-deck/` 目录放进任一位置，然后在需要的项目里让助手加载它。
-
 **开箱即用 —— 包内已自带全部运行资源**：Saira 字体（含 OFL 许可证）、等高线纹理（墨版/白版）、演示稿 token、三主题色对照示例图，全部随包分发，**克隆或解压后不需要再联网下载任何东西**。
 
-**用户级（全局可用）**
+**方式一：直接下载 zip（最省事）**
+
+从仓库根目录的 [`dist/endfield-deck-v0.1.1.zip`](dist/endfield-deck-v0.1.1.zip) 下载，解压即得完整包（含字体与示例图），然后：
 
 ```bash
-bash endfield-deck/install.sh            # 装到 ~/.workbuddy/skills/（全局可用）
+bash endfield-deck/install.sh              # 装到 ~/.workbuddy/skills/（全局可用）
+bash endfield-deck/install.sh --project .  # 装到 ./.workbuddy/skills/（仅当前项目）
 ```
 
-**项目级（只在这个项目里用）**
+**方式二：git clone**
 
 ```bash
-bash endfield-deck/install.sh --project .   # 装到 ./.workbuddy/skills/
+git clone https://github.com/Guhengfeng/endfield-deck.git
+cd endfield-deck
+bash install.sh              # 全局
+bash install.sh --project .  # 项目级
 ```
+
+> **发行版**：<https://github.com/Guhengfeng/endfield-deck/releases> —— 每个 tag 都有自动生成的源码包。
 
 （手工复制同样可用：`cp -r endfield-deck ~/.workbuddy/skills/`。脚本额外做一件事：按实际安装路径生成 `assets/fonts.conf`，因为 fontconfig 需要绝对路径。）
 
