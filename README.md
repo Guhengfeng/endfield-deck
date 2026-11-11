@@ -39,7 +39,7 @@ $ python scripts/accent_gen.py "#A62B1F" --name 深红
 
 文字重叠、跨行压行、图注条最后一个字被切、满版铺色把强调色稀释 —— 这些在生成的 PPTX 里肉眼难发现，但投影出去就是事故。
 
-本包沉淀了 **12 条真实踩坑**（每条都有现象、根因、解法、检测方法），并提供**四步验收门禁**：
+本包沉淀了 **13 条真实踩坑**（每条都有现象、根因、解法、检测方法），并提供**四步验收门禁**：
 
 ```bash
 python scripts/build_deck.py --slides slides/ --out deck.pptx --accent "#A62B1F"   # 构建 + 自检
@@ -139,7 +139,7 @@ endfield-deck/
 │   ├── theme-accent.md               换色六步、语义闸、四组对比度、派生算法、面积闸
 │   ├── deck-layout.md                网格、字号档、颜色角色、九种页型、通用骨架
 │   ├── slidep-dsl.md                 slidep 语法、组件、样式属性表、占位符
-│   └── pitfalls.md                   12 条实战陷阱 + 四步验收门禁
+│   └── pitfalls.md                   13 条实战陷阱 + 四步验收门禁
 ├── scripts/
 │   ├── accent_gen.py                 主题色引擎（text/json/css/slidep 四种输出）
 │   ├── build_deck.py                 构建 + 主题色注入 + 静默失败检测

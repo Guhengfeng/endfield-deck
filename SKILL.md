@@ -10,7 +10,7 @@ description: "用「终末地风味」的工业科技感做可照读的演示稿
 它的两个核心能力：
 
 1. **主题色任意切换** —— 用户说「用红色」「用科技蓝」「用我们品牌色」，跑一条命令就得到一整套合规配色（派生色板 + 对比度实测 + 前景色决策 + 面积上限），不是手填一个 hex。
-2. **一次做对** —— 沉淀了 slidep 引擎的真实排版陷阱（12 条）和一套四步验收门禁（lint 零诊断 → 逐页截图 → 像素体检 → 产物完整性）。
+2. **一次做对** —— 沉淀了 slidep 引擎的真实排版陷阱（13 条）和一套四步验收门禁（lint 零诊断 → 逐页截图 → 像素体检 → 产物完整性）。
 
 ---
 
@@ -105,7 +105,7 @@ python scripts/count_words.py slides/
 | `references/theme-accent.md` | 换色六步、语义闸、四组对比度、派生算法、面积闸、变体卡 |
 | `references/deck-layout.md` | 画布网格、字号阶梯、颜色角色、页眉页脚、九种页型、通用骨架 |
 | `references/slidep-dsl.md` | slidep 命令、文件组织、四个组件、支持的样式属性、占位符、字体 |
-| `references/pitfalls.md` | 12 条实战陷阱（现象→根因→解法→检测）+ 四步验收门禁 |
+| `references/pitfalls.md` | 13 条实战陷阱（现象→根因→解法→检测）+ 四步验收门禁 |
 | `scripts/accent_gen.py` | 主题色引擎：派生 + 对比度 + 语义判定 + 变体卡（`text/json/css/slidep` 五种输出） |
 | `scripts/build_deck.py` | 构建：注入主题色 → 逐页 upsert（重试）→ 逐页截图 → 逐页文本校验 |
 | `scripts/scan_overflow.py` | 体检：越界、文字重叠、异常空白带、强调色面积 |

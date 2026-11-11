@@ -168,10 +168,17 @@ def key_phrases(dsl_text, limit=5):
 
 # ---------------------------------------------------------------- 产物校验
 
+# inspect 输出的 Markdown 会转义下划线等字符（accent_gen → accent\_gen）。
+# 比对前必须把反斜杠还原，否则会误报「文本未写入」。
+_MD_ESC = re.compile(r"\\(.)")
+
+
 def norm(s):
-    """归一化：删掉所有空白字符。
+    """归一化：还原 markdown 转义 + 删掉所有空白字符。
     DSL 里的换行/缩进、`<br/>`、`<span>` 拆分都会让同一句话在 inspect 输出里
-    被切成多段，去掉空白再比对才能对上。"""
+    被切成多段，去掉空白再比对才能对上；
+    inspect 是 markdown，`_`/`*`/`&` 等会被反斜杠转义，不还原就会误报未写入。"""
+    s = _MD_ESC.sub(r"\1", s)
     return re.sub(r"\s+", "", s)
 
 

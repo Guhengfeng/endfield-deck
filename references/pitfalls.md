@@ -185,6 +185,18 @@ print(right_margin, "幻灯片 px")   # 小于 8 就有裁切风险
 
 ---
 
+### 坑 13 · `inspect` 输出是 Markdown，下划线被转义 → 校验误报「文本未写入」
+
+**现象**：`build_deck.py` 报「第 1 页文本未写入（可能 upsert 静默失败）」，但 `slidep inspect` 里那句话明明在。
+
+**根因**：`inspect` 输出的是 Markdown，`accent_gen` 会被转义成 `accent\_gen`；校验前只去掉了空白，没还原反斜杠，于是比对失败。
+
+**解法**：比对前先还原转义（`re.sub(r"\\(.)", r"\1", s)`）再删空白。`build_deck.py` 的 `norm()` 已按此实现 —— **如果你自己写校验脚本，别忘了这一步**。
+
+**教训**：校验器自身的 bug 会伪装成产物 bug。校验器报未写入时，先 `slidep inspect` 眼看一眼，再决定是产物问题还是校验器问题。
+
+---
+
 ## 四、验收门禁（四步，全过才算完成）
 
 ### 第 1 步 · lint 零诊断
@@ -246,3 +258,4 @@ python scripts/scan_overflow.py --pptx deck.pptx --slides slides/
 | 深色底文字看不见 | 10 | 用 `#A3A3A3` 不用 `ink2` |
 | 条带最后一个字被切 | 11 | 缩短文案 |
 | 整页一个色 | 12 | 限制面积，或改左色右浅 |
+| 误报「文本未写入」 | 13 | 比对前还原 markdown 转义 |
