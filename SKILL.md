@@ -1,16 +1,38 @@
 ---
 name: endfield-deck
-description: "用「终末地风味」的工业科技感做可照读的演示稿（PPTX / 幻灯片），主题色任意切换。支持：写一份 PPT、做一份汇报/宣讲/发布会幻灯片、要演讲稿配 PPT、把 PPT 换成红色/蓝色/品牌色、深色或浅色版式的演示文稿、slidep DSL 生成幻灯片、给 PPT 配逐页讲稿。强调色任意指定并自动做对比度校验与色板派生，含 9 种通用页型、投影可读性字号档、slidep 排版陷阱表与四步验收门禁。Use when asked to create or edit a presentation, slide deck, PPTX, keynote-style talk, or to add speaker notes to slides."
+description: "用「终末地风味」的工业科技感做可照读的演示稿（PPTX / 幻灯片），主题色任意切换。支持：写一份 PPT、做一份汇报/宣讲/发布会幻灯片、要演讲稿配 PPT、把 PPT 换成红色/蓝色/品牌色、深色或浅色版式的演示文稿、slidep DSL 生成幻灯片、给 PPT 配逐页讲稿。强调色任意指定并自动做对比度校验与色板派生，含完整方案库（所有配色/版式/底色方案带实拍与实测）、9 种通用页型、完整工作流 Playbook、可克隆的参考案例、投影可读性字号档、slidep 排版陷阱表与四步验收门禁。Use when asked to create or edit a presentation, slide deck, PPTX, keynote-style talk, or to add speaker notes to slides."
 ---
 
 # endfield-deck — 任意主题色的照读演示稿
 
 这个 skill 教你做**工业科技风的演示稿（PPTX）**：纸面加墨色、一种强调色、宽体英文配粗体中文、编号装饰、细线分区。
 
-它的两个核心能力：
+它的三个核心能力：
 
 1. **主题色任意切换** —— 用户说「用红色」「用科技蓝」「用我们品牌色」，跑一条命令就得到一整套合规配色（派生色板 + 对比度实测 + 前景色决策 + 面积上限），不是手填一个 hex。
-2. **一次做对** —— 沉淀了 slidep 引擎的真实排版陷阱（13 条）和一套四步验收门禁（lint 零诊断 → 逐页截图 → 像素体检 → 产物完整性）。
+2. **方案库可查可克隆** —— 所有走过的配色/版式/底色方案都带实拍图与实测数据；参考案例可一键克隆成新项目的骨架（自动换色 + 列出缺失素材）。
+3. **一次做对** —— 沉淀了 slidep 引擎的真实排版陷阱（13 条）和一套四步验收门禁（lint 零诊断 → 逐页截图 → 像素体检 → 产物完整性）。
+
+---
+
+## 开始之前：先翻方案库，别从零试
+
+本 skill 把真实项目里走过的**所有方案**都留了档（实拍图 + 实测数据 + 决策理由）。**动手前先读，再选。**
+
+| 要回答的问题 | 去哪看 |
+|---|---|
+| 强调色用哪一档？亮黄 / 三档红 / 任意色 | `references/variants-gallery.md` 第一节（附四组对比度实测表） |
+| 强调色铺多少？左红右浅 / 上红下浅 / 浅底红块 | `references/variants-gallery.md` 第二节（附面积占比） |
+| 满版页怎么处理？深红高潮 / 全浅底 / 浅蒙层 | `references/variants-gallery.md` 第三节 |
+| 整个项目该怎么做？澄清→核验→结构→选型→落地→讲稿→验收→交付 | `references/workflow-playbooks.md` |
+| 用户说"太丑了/字太小/不要全红"怎么办 | `references/workflow-playbooks.md` 第九节返工映射表 |
+| 想直接抄一个骨架 | `examples/case-huangxuhua/README.md`（含可复制的 DSL 片段） |
+
+想直接开干、用现成骨架：
+
+```bash
+python scripts/clone_case.py --dst ./slides --accent "#A62B1F"   # 克隆参考案例并换色
+```
 
 ---
 
@@ -26,7 +48,9 @@ description: "用「终末地风味」的工业科技感做可照读的演示稿
 | **强调色** | 用户指定的颜色 / 品牌色 / 主题名（"党建红""科技蓝"） |
 | **有没有删除语义** | 有删除按钮、危险操作、撤销 → 红色必须保留给删除 |
 
-页型选哪个、怎么组合，看 `references/deck-layout.md`。
+页型选哪个、怎么组合，看 `references/deck-layout.md`；配色与版式方案看 `references/variants-gallery.md`。
+
+**给用户看对比，不要让用户凭空选**：至少给 3 个候选 + 实拍图 + 实测数据 + 你的推荐和理由。
 
 ### 第 2 步 · 跑色板引擎
 
@@ -102,6 +126,8 @@ python scripts/count_words.py slides/
 
 | 文件 | 内容 |
 | --- | --- |
+| `references/variants-gallery.md` | **方案库**：所有配色/版式/底色方案 + 实测对比度 + 实拍索引 + 选型决策树 |
+| `references/workflow-playbooks.md` | **工作流 Playbook**：澄清→核验→结构→选型→落地→讲稿→验收→交付 + 返工映射表 + 协作规范 |
 | `references/theme-accent.md` | 换色六步、语义闸、四组对比度、派生算法、面积闸、变体卡 |
 | `references/deck-layout.md` | 画布网格、字号阶梯、颜色角色、页眉页脚、九种页型、通用骨架 |
 | `references/slidep-dsl.md` | slidep 命令、文件组织、四个组件、支持的样式属性、占位符、字体 |
@@ -111,6 +137,10 @@ python scripts/count_words.py slides/
 | `scripts/scan_overflow.py` | 体检：越界、文字重叠、异常空白带、强调色面积 |
 | `scripts/lint_deck.sh` | 门禁：逐页 `slidep lint`，汇总 diagnostics |
 | `scripts/count_words.py` | 正文净字数 + 口播时长估算 |
+| `scripts/clone_case.py` | **克隆参考案例**：复制骨架 + 换强调色 + 列缺失素材 + 打印下一步命令 |
+| `scripts/make_gallery.py` | 把多张截图拼成带标签的方案对照图（生成 examples/ 里的图册） |
+| `examples/variants/*.jpg` | 方案实拍：五套主题色、三种底色策略、三种强调色页版式 |
+| `examples/case-huangxuhua/` | **完整参考案例**：10 页 DSL 源 + 10 张终版截图 + 决策链档案 |
 | `assets/tokens.deck.json` | 演示稿 token：尺寸、字号阶梯、间距、颜色角色 |
 | `assets/fonts/` | Saira（拉丁）+ OFL 许可证 |
 | `assets/contours/` | 等高线纹理：墨版（浅底）/ 白版（深底） |
@@ -121,7 +151,7 @@ python scripts/count_words.py slides/
 
 - **slidep**：WorkBuddy 内置的演示引擎，随应用提供。找不到时确认应用已就绪。
 - **字体渲染**：需设置 `FONTCONFIG_FILE` / `FONTCONFIG_PATH` 指向 `assets/fonts.conf`。
-- **Python 3.7+**，脚本零第三方依赖（`scan_overflow.py` 的像素检测需要 Pillow，缺失时自动跳过该部分）。
+- **Python 3.7+**，脚本零第三方依赖（`scan_overflow.py` 的像素检测需要 Pillow，缺失时自动跳过该部分；`make_gallery.py` 生成图册需要 Pillow）。
 
 ```bash
 export PATH="$HOME/.workbuddy/binaries/node/versions/22.22.2-6:$PATH"
@@ -133,10 +163,11 @@ export FONTCONFIG_PATH="<skill 目录>/assets/fontconfig"
 
 ## 与 endfield-ui 的关系
 
-本 skill 继承 endfield-ui 的视觉语言（终末地风味），但做两件事：
+本 skill 继承 endfield-ui 的视觉语言（终末地风味），但做三件事：
 
 1. **把 accent 从 4 个预设扩到任意色**，并把「红色只给删除」改成条件式；
-2. **把作用域从 UI 收到演示稿**，补上 slidep DSL、版式库、陷阱表和验收门禁。
+2. **把作用域从 UI 收到演示稿**，补上 slidep DSL、版式库、陷阱表和验收门禁；
+3. **把真实项目里走过的所有方案留档成可查可克隆的方案库**（配色/版式/底色/工作流/完整案例）。
 
 两者共享同一套固定规则（强调色只做填充、切角=可点、宽体英文配粗体中文、真数字、细线、无圆角投影渐变）。
 

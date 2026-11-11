@@ -1,0 +1,126 @@
+<Slide notes={`那么，是什么支撑他走过这三十年？我想，可以用两种精神来概括。
+
+第一种，是以身许国的爱国精神。他把国家安危放在第一位，个人得失、亲情团聚都放在国家需求之后，把人生理想融入强国事业之中。誓干惊天动地事，甘做隐姓埋名人。
+
+第二种，是严谨求实、不惧风险的担当精神。对待每一个科研都是一丝不苟，对每一个零部件重量都斤斤计较、反复核对；在关键的时刻敢于挺身而出，扛起责任。
+
+这就是他留给我们的精神坐标：国家需要的时候，第一个站出来；技术上最难的时候，第一个冲上去。`} style={{
+    width: 1280,
+    height: 720,
+    padding: 60,
+    background: '#F4F4F2',
+    fontFamily: 'Noto Sans SC',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    {/* 页眉 */}
+    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 16, height: 34 }}>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 62, height: 30, background: '#161616' }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, color: '#FFFFFF', letterSpacing: 1 }}>
+                No.09
+            </Text>
+        </Box>
+        <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.6, color: '#5C5C5C' }}>
+            // THE SPIRIT
+        </Text>
+    </Box>
+
+    <Box style={{ marginTop: 20 }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 40, fontWeight: 900, color: '#161616', lineHeight: 1.2 }}>
+            他留给我们的两种精神
+        </Text>
+    </Box>
+    <Box style={{ width: 1160, height: 1, background: '#D9D9D6', marginTop: 16 }} />
+
+    {/* 主体：非对称双栏 55% / 45% */}
+    <Box style={{ flexDirection: 'row', gap: 32, marginTop: 28, height: 440 }}>
+        {/* 左：以身许国 */}
+        <Box style={{ width: 640, height: 440, background: '#161616', padding: 28, flexDirection: 'column' }}>
+            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+                <Box style={{ width: 48, height: 48, background: '#FFFA00', alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={{ fontFamily: 'Saira', fontSize: 28, fontWeight: 900, color: '#161616' }}>
+                        01
+                    </Text>
+                </Box>
+                <Box style={{ flexDirection: 'column' }}>
+                    <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.2, color: '#A3A3A3' }}>
+                        PATRIOTISM
+                    </Text>
+                    <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 30, fontWeight: 900, color: '#FFFFFF', marginTop: 4 }}>
+                        以身许国的爱国精神
+                    </Text>
+                </Box>
+            </Box>
+
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 21, color: '#A3A3A3', lineHeight: 1.65, marginTop: 20 }}>
+                把国家安危放在第一位，个人得失、亲情团聚都放在国家需求之后，把人生理想融入强国事业之中。
+            </Text>
+
+            <Box style={{ marginTop: 18, flexDirection: 'column', gap: 10 }}>
+                {[
+                    '隐姓埋名 30 年，家人不知他身在何处',
+                    '父亲离世，未能回家奔丧',
+                    '把一生最好的年华交给看不见的岗位',
+                    '誓干惊天动地事，甘做隐姓埋名人',
+                    '1965 年起在葫芦岛荒岛求索，一干就是二十三年',
+                ].map((t, i) => (
+                    <Box key={i} style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 12 }}>
+                        <Box style={{ width: 6, height: 6, background: '#FFFA00', marginTop: 10 }} />
+                        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#EDEDED', lineHeight: 1.5 }}>
+                            {t}
+                        </Text>
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+
+        {/* 右：严谨求实 */}
+        <Box style={{ width: 488, height: 440, background: '#FFFFFF', padding: 28, flexDirection: 'column' }}>
+            <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14 }}>
+                <Box style={{ width: 48, height: 48, background: '#161616', alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={{ fontFamily: 'Saira', fontSize: 28, fontWeight: 900, color: '#FFFFFF' }}>
+                        02
+                    </Text>
+                </Box>
+                <Box style={{ flexDirection: 'column' }}>
+                    <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.2, color: '#5C5C5C' }}>
+                        RESPONSIBILITY
+                    </Text>
+                    <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 30, fontWeight: 900, color: '#161616', marginTop: 4 }}>
+                        严谨求实的担当精神
+                    </Text>
+                </Box>
+            </Box>
+
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 21, color: '#5C5C5C', lineHeight: 1.65, marginTop: 20 }}>
+                对待每一个科研都是一丝不苟，对每一个零部件重量都斤斤计较、反复核对；在关键的时刻敢于挺身而出，扛起责任。
+            </Text>
+
+            <Box style={{ marginTop: 18, flexDirection: 'column', gap: 10 }}>
+                {[
+                    '算盘演算，两组人交叉验算答案一致',
+                    '上艇设备与边角余料，一律过秤核对',
+                    '64 岁随艇下潜，为 170 多人安全负责',
+                    '关键时刻挺身而出，扛起责任',
+                ].map((t, i) => (
+                    <Box key={i} style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 12 }}>
+                        <Box style={{ width: 6, height: 6, background: '#161616', marginTop: 10 }} />
+                        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#161616', lineHeight: 1.5 }}>
+                            {t}
+                        </Text>
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+    </Box>
+
+    {/* 页尾 */}
+    <Box style={{ position: 'absolute', left: 60, right: 60, bottom: 24, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 17, color: '#5C5C5C' }}>
+            资料来源：中国军网《为祖国「深潜」》
+        </Text>
+        <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 1.4, color: '#5C5C5C' }}>
+            09 / 10
+        </Text>
+    </Box>
+</Slide>

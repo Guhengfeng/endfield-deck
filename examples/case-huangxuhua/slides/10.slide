@@ -1,0 +1,110 @@
+<Slide notes={`2025年2月6日，黄旭华院士因病医治无效在湖北武汉逝世，享年99岁。同年6月29日，他的骨灰安放在故乡汕尾红海湾的抗日英雄墓地，面对着他读过书的那座红楼。墓碑背后的石头上，镌刻着他对自己人生最凝练的剖白：此生属于祖国，此生属于核潜艇，此生无怨无悔。
+
+一个人能走多远，取决于他为什么出发。黄旭华用三十年回答了这个问题：出发，是为了国家。
+
+感谢大家。`} style={{
+    width: 1280,
+    height: 720,
+    padding: 0,
+    background: '#161616',
+    fontFamily: 'Noto Sans SC',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    {/* 满版追思现场（已含纵向渐变蒙层） */}
+    <Image src="assets/memorial_scrim.jpg" style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: 1280,
+        height: 720,
+        objectFit: 'cover',
+        objectPosition: 'center 45%',
+    }} />
+    {/* 底部金句区再压一层，确保文字对比 */}
+    <Box style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: 300,
+        background: '#161616',
+        opacity: 0.58,
+    }} />
+    {/* 顶部标题区同样压暗，保证新增说明文字可读 */}
+    <Box style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: 260,
+        background: '#161616',
+        opacity: 0.5,
+    }} />
+
+    {/* 顶部信息 */}
+    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 16, height: 34, marginLeft: 60, marginTop: 60, position: 'relative', zIndex: 2 }}>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 62, height: 30, background: '#FFFA00' }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, color: '#161616', letterSpacing: 1 }}>
+                No.10
+            </Text>
+        </Box>
+        <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.6, color: '#A3A3A3' }}>
+            // REMEMBRANCE
+        </Text>
+    </Box>
+
+    {/* 顶部标题 */}
+    <Box style={{ marginLeft: 60, marginTop: 22, position: 'relative', zIndex: 2 }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 46, fontWeight: 900, color: '#FFFFFF', lineHeight: 1.25 }}>
+            此生属于祖国
+        </Text>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 21, color: '#A3A3A3', lineHeight: 1.5, marginTop: 12 }}>
+            2025 年 2 月 6 日，黄旭华院士因病医治无效在湖北武汉逝世，享年 99 岁。
+        </Text>
+    </Box>
+
+    {/* 底部金句横幅 */}
+    <Box style={{
+        position: 'absolute',
+        left: 60,
+        right: 60,
+        bottom: 96,
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        justifyContent: 'space-between',
+        zIndex: 2,
+    }}>
+        <Box style={{ flexDirection: 'column', gap: 12 }}>
+            <Box style={{ width: 44, height: 4, background: '#FFFA00' }} />
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 36, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.4 }}>
+                此生属于祖国，此生属于核潜艇，此生无怨无悔。
+            </Text>
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 18, color: '#A3A3A3' }}>
+                墓碑背面镌刻 · 出自央视《此生无悔》演讲
+            </Text>
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#E8D8D5', lineHeight: 1.6, marginTop: 10 }}>
+                一个人能走多远，取决于他为什么出发。黄旭华用三十年回答了这个问题：出发，是为了国家。
+            </Text>
+        </Box>
+
+        <Box style={{ flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 1.8, color: '#A3A3A3' }}>
+                2025.06.29 · SHANWEI
+            </Text>
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 18, color: '#A3A3A3' }}>
+                骨灰安放于故乡汕尾红海湾
+            </Text>
+        </Box>
+    </Box>
+
+    {/* 页尾 */}
+    <Box style={{ position: 'absolute', left: 60, right: 60, bottom: 26, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', zIndex: 2 }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 17, color: '#A3A3A3' }}>
+            图片来源：中国军网 · 追思现场
+        </Text>
+        <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 1.4, color: '#A3A3A3' }}>
+            10 / 10
+        </Text>
+    </Box>
+</Slide>

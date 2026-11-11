@@ -1,0 +1,116 @@
+<Slide notes={`整整三十年，因为保密要求，他几乎和家人断了联系。家里人不知道他在外做什么，父亲直到去世也未能再见他一面。等到任务解密、再次回到家乡，当年那个青年已经满头白发。有人问他，忠孝不能两全，你是怎样理解的？他回答得很平静：对国家的忠，就是对父母最大的孝。这句话听着轻，落到一个人身上，是三十年的杳无音讯，是父亲临终时儿子不能奔丧，是爱人李世英独自撑起三个女儿和一个家。他把最难的那句诗写给了自己：花甲痴翁，志探龙宫。`} style={{
+    width: 1280,
+    height: 720,
+    padding: 0,
+    background: '#F4F4F2',
+    fontFamily: 'Noto Sans SC',
+    position: 'relative',
+    flexDirection: 'row',
+}}>
+    {/* ===== 左：深红面板（红占 37.5%，非满版） ===== */}
+    <Box style={{
+        width: 480,
+        height: 720,
+        background: 'ACCENT',
+        padding: 56,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        position: 'relative',
+        overflow: 'hidden',
+    }}>
+        <Image src="assets/contour_a_light.png" style={{
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            width: 480,
+            height: 420,
+            opacity: 0.13,
+            objectFit: 'cover',
+        }} />
+
+        {/* 页眉 */}
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14, position: 'relative', zIndex: 2 }}>
+            <Box style={{ width: 62, height: 30, background: '#FFFFFF', alignItems: 'center', justifyContent: 'center' }}>
+                <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, color: 'ACCENT', letterSpacing: 1 }}>
+                    No.04
+                </Text>
+            </Box>
+            <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.6, color: '#F2DEDA' }}>
+                // THIRTY SILENT YEARS
+            </Text>
+        </Box>
+
+        {/* 巨型数字 */}
+        <Box style={{ flexDirection: 'row', alignItems: 'flex-end', position: 'relative', zIndex: 2 }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 186, fontWeight: 900, color: '#FFFFFF', lineHeight: 0.92 }}>
+                30
+            </Text>
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 36, fontWeight: 700, color: '#FFFFFF', paddingBottom: 24, paddingLeft: 14 }}>
+                年
+            </Text>
+        </Box>
+
+        {/* 年份 + 说明 */}
+        <Box style={{ position: 'relative', zIndex: 2 }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 19, fontWeight: 700, letterSpacing: 2.2, color: '#F2DEDA' }}>
+                1958 — 1988
+            </Text>
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 19, color: '#F2DEDA', lineHeight: 1.62, marginTop: 16, width: 330 }}>
+                从受命的那一天起，家中书桌上只剩一个信箱与一张写着代号的通信本
+            </Text>
+        </Box>
+    </Box>
+
+    {/* ===== 右：纸底文字区 ===== */}
+    <Box style={{
+        width: 800,
+        height: 720,
+        padding: 56,
+        flexDirection: 'column',
+        position: 'relative',
+    }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 26, fontWeight: 700, color: '#161616', lineHeight: 1.5 }}>
+            整整三十年，因为保密要求，他几乎和家人断了联系。
+        </Text>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 22, color: '#5C5C5C', lineHeight: 1.68, marginTop: 16 }}>
+            父亲离世，他都无法回家奔丧。等到 1986 年底任务解密、再次回到家乡，当年出门时刚满三十岁的青年，已经满头白发。
+        </Text>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 22, color: '#5C5C5C', lineHeight: 1.68, marginTop: 12 }}>
+            爱人李世英一个人，撑起三个女儿和一个家；家里的书桌上，只剩一个信箱和一张写着代号的通信本。
+        </Text>
+
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 14, marginTop: 20 }}>
+            <Box style={{ width: 44, height: 4, background: 'ACCENT' }} />
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 22, fontWeight: 700, color: '#161616' }}>
+                对国家的忠，就是对父母最大的孝
+            </Text>
+        </Box>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 18, color: '#5C5C5C', marginTop: 8, marginLeft: 58 }}>
+            —— 黄旭华，央视《此生无悔》演讲
+        </Text>
+
+        {/* 底部：照片 + 时间轴 */}
+        <Box style={{ flexDirection: 'row', gap: 24, marginTop: 'auto', position: 'relative', zIndex: 2 }}>
+            <Box style={{ width: 240, height: 132, overflow: 'hidden', background: '#E4E4E0' }}>
+                <Image src="assets/portrait_old.jpg" style={{ width: 240, height: 132, objectFit: 'cover', objectPosition: 'center 30%' }} />
+            </Box>
+            <Box style={{ width: 424, height: 132, flexDirection: 'column', justifyContent: 'space-between' }}>
+                {[
+                    ['1957', '元旦回家，母亲嘱「要常回家看看」'],
+                    ['1965', '调往葫芦岛，开始「荒岛求索」'],
+                    ['1986', '底工程解密，返乡时两鬓已是斑白'],
+                    ['1987', '母亲认出「李世英」三字'],
+                ].map((row, i) => (
+                    <Box key={i} style={{ flexDirection: 'row', alignItems: 'center', gap: 16 }}>
+                        <Text style={{ fontFamily: 'Saira', fontSize: 20, fontWeight: 700, color: 'ACCENT', width: 56 }}>
+                            {row[0]}
+                        </Text>
+                        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 18, color: '#5C5C5C' }}>
+                            {row[1]}
+                        </Text>
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+    </Box>
+</Slide>

@@ -4,9 +4,11 @@
 
 一个给 AI 助手用的 Skill 包：给它一句话（"做一份讲黄旭华的 PPT，用红色"），它会产出一整套合规的 PPTX —— 版式、配色、逐字讲稿、验收报告。
 
+**并且把真实项目里走过的所有方案都留了档**：五套配色、三种底色策略、三种强调色页版式、完整工作流、一份可直接克隆的 10 页案例 —— 全部带实拍图与实测数据，动手前先翻方案库，不用每次从头试。
+
 ---
 
-## 它解决的两个真问题
+## 它解决的三个真问题
 
 ### 问题 1：换色全靠手调，改一个 hex 要重排一遍
 
@@ -49,6 +51,25 @@ python scripts/count_words.py slides/                                           
 ```
 
 `scan_overflow.py` 用 `slidep inspect` 输出的坐标做**文字重叠检测**和**越界检测**，用截图做**强调色面积统计** —— 大部分排版事故可以机器抓出来。
+
+### 问题 3：方案试过就丢，下一个项目又要从头摸
+
+一个项目里往往试过五六套配色、两种底色策略、三种强调色页版式。定完之后那些图和数字就没了，下一个项目（或者三个月后的自己）只能重新试。
+
+本包把这些方案**全部留档**，每一条都带实拍图、实测对比度、面积占比和"为什么选它/为什么不选它"：
+
+```
+references/variants-gallery.md     方案库：配色 / 版式 / 底色 / 选型决策树
+references/workflow-playbooks.md   工作流：澄清→核验→结构→选型→落地→讲稿→验收→交付
+examples/variants/*.jpg            五套配色 + 三种底色 + 三种强调色页版式（实拍）
+examples/case-huangxuhua/          完整案例：10 页 DSL + 终版截图 + 决策链档案
+```
+
+而且**可以克隆**：一键把参考案例的骨架复制成新项目起点，自动换色、列出你要自备的素材、打印下一步命令。
+
+```bash
+python scripts/clone_case.py --dst ./slides --accent "#1E88E5"
+```
 
 ---
 
@@ -132,10 +153,12 @@ python scripts/scan_overflow.py --pptx deck.pptx --shots deck_shots/ --accent "#
 
 ```
 endfield-deck/
-├── SKILL.md                          入口：四步工作流 + 硬规则
+├── SKILL.md                          入口：方案库索引 + 四步工作流 + 硬规则
 ├── README.md                         本文件
 ├── LICENSE                           MIT
 ├── references/
+│   ├── variants-gallery.md           ★方案库：所有配色/版式/底色方案 + 实测 + 决策树
+│   ├── workflow-playbooks.md         ★工作流：八阶段 Playbook + 返工映射表 + 协作规范
 │   ├── theme-accent.md               换色六步、语义闸、四组对比度、派生算法、面积闸
 │   ├── deck-layout.md                网格、字号档、颜色角色、九种页型、通用骨架
 │   ├── slidep-dsl.md                 slidep 语法、组件、样式属性表、占位符
@@ -144,14 +167,26 @@ endfield-deck/
 │   ├── accent_gen.py                 主题色引擎（text/json/css/slidep 四种输出）
 │   ├── build_deck.py                 构建 + 主题色注入 + 静默失败检测
 │   ├── scan_overflow.py              几何体检 + 像素体检
+│   ├── clone_case.py                 克隆参考案例：换色 + 列缺失素材 + 下一步命令
+│   ├── make_gallery.py               多图拼方案对照图（生成 examples/ 图册）
 │   ├── lint_deck.sh                  逐页 lint 门禁
 │   └── count_words.py                正文净字数 + 口播时长
-└── assets/
-    ├── tokens.deck.json              演示稿 token
-    ├── fonts/                        Saira + OFL 许可证
-    └── contours/                     等高线纹理（墨版 / 白版）
+├── assets/
+│   ├── tokens.deck.json              演示稿 token
+│   ├── fonts/                        Saira + OFL 许可证
+│   └── contours/                     等高线纹理（墨版 / 白版）
 └── examples/
-    └── theme-comparison.png          同一套 DSL 换三种主题色的实际效果
+    ├── theme-comparison.png          同一套 DSL 换三种主题色的实际效果
+    ├── variants/                     方案实拍图册（5 张对照图）
+    │   ├── theme-3red.jpg            三档红同页对比
+    │   ├── theme-yellow-vs-red.jpg   亮黄 token vs 深红成品
+    │   ├── theme-arbitrary-3.jpg     科技蓝 / 墨绿 / 深红
+    │   ├── base-3strategies.jpg      三种底色策略
+    │   └── p4-3layouts.jpg           强调色页三种版式
+    └── case-huangxuhua/              完整参考案例
+        ├── README.md                 决策链 + 页面清单 + 可复制骨架片段
+        ├── slides/01..10.slide       10 页 DSL 源（可直接克隆改写）
+        └── shots/p01..p10.jpg        10 页终版截图
 ```
 
 ---
@@ -169,6 +204,28 @@ endfield-deck/
 ![三种主题色对照](examples/theme-comparison.png)
 
 左面板底色、巨型数字、时间轴年份、引文短线全部跟随主题色；右侧浅底区不受影响；accent 上的文字色由引擎按对比度自动决策。
+
+---
+
+## 方案库（全部带实拍与实测）
+
+| 方案 | 实拍 |
+|---|---|
+| 三档红对比 | ![](examples/variants/theme-3red.jpg) |
+| 亮黄 token vs 深红成品 | ![](examples/variants/theme-yellow-vs-red.jpg) |
+| 强调色任意化 | ![](examples/variants/theme-arbitrary-3.jpg) |
+| 三种底色策略 | ![](examples/variants/base-3strategies.jpg) |
+| 强调色页三种版式 | ![](examples/variants/p4-3layouts.jpg) |
+
+完整的实测数据（四组 WCAG 对比度、派生色板、面积上限）、选型决策树与每个方案的适用/禁用场景见 [`references/variants-gallery.md`](references/variants-gallery.md)。
+
+### 克隆参考案例
+
+```bash
+python scripts/clone_case.py --dst ./slides --accent "#A62B1F"
+```
+
+复制 10 页骨架 → 替换主题色 token 与 `'ACCENT'` 占位符 → 列出需要自备的素材 → 打印下一步命令。案例档案见 [`examples/case-huangxuhua/README.md`](examples/case-huangxuhua/README.md)。
 
 ---
 

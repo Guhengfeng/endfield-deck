@@ -1,0 +1,88 @@
+<Slide notes={`整件事最难的不是技术，是选择。1965年，他被调到辽宁葫芦岛承担起总设计师的担子，此后的三十年，家里的书桌上只有一个信箱和一张写着代号的通信本。父亲去世那天，他正在海岛上，不能回家奔丧。1986年底，两鬓斑白的他再次回到广东老家，93岁的老母抱着他相拥而泣。老母亲后来对孩子们说：旭华一直是有家也不能回，什么也不肯说，原来他有自己的苦衷啊，你们都要理解三哥。黄旭华得知后禁不住泪流满面。对国家的忠，就是对父母最大的孝——这就是一个儿子的选择。`} style={{
+    width: 1280,
+    height: 720,
+    padding: 60,
+    background: '#F4F4F2',
+    fontFamily: 'Noto Sans SC',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    {/* 页眉 */}
+    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 16, height: 34 }}>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 62, height: 30, background: '#161616' }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, color: '#FFFFFF', letterSpacing: 1 }}>
+                No.08
+            </Text>
+        </Box>
+        <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.6, color: '#5C5C5C' }}>
+            // BETWEEN LOYALTY AND FILIAL PIETY
+        </Text>
+    </Box>
+
+    <Box style={{ marginTop: 20 }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 40, fontWeight: 900, color: '#161616', lineHeight: 1.2 }}>
+            忠孝之间，他把国家放在第一位
+        </Text>
+    </Box>
+    <Box style={{ width: 1160, height: 1, background: '#D9D9D6', marginTop: 16 }} />
+
+    {/* 主体：上引言 + 下两栏 */}
+    <Box style={{ flexDirection: 'column', marginTop: 26, height: 452 }}>
+        {/* 引言区 */}
+        <Box style={{ flexDirection: 'row', gap: 24, height: 190 }}>
+            <Box style={{ width: 4, height: 190, background: '#FFFA00' }} />
+            <Box style={{ width: 700, flexDirection: 'column', justifyContent: 'center' }}>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 30, fontWeight: 700, color: '#161616', lineHeight: 1.48 }}>
+                    对国家的忠，就是对父母最大的孝。
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#5C5C5C', lineHeight: 1.6, marginTop: 12 }}>
+                    1986 年底，两鬓斑白的黄旭华回到广东老家，93 岁的老母亲抱着他相拥而泣。老母亲转而对儿女们说：你们都要理解三哥，他这样做是对的。
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 17, color: '#5C5C5C', marginTop: 10 }}>
+                    —— 出自央视《此生无悔》演讲
+                </Text>
+            </Box>
+
+            <Box style={{ width: 412, height: 190, position: 'relative', overflow: 'hidden', background: '#E4E4E0' }}>
+                <Image src="assets/memorial_hall.jpg" style={{ width: 412, height: 190, objectFit: 'cover', objectPosition: 'center 35%' }} />
+            </Box>
+        </Box>
+
+        {/* 下两栏 */}
+        <Box style={{ flexDirection: 'row', gap: 30, height: 240, marginTop: 22 }}>
+            <Box style={{ width: 565, height: 240, background: '#FFFFFF', padding: 22, flexDirection: 'column' }}>
+                <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2, color: '#5C5C5C' }}>
+                    WHAT HE GAVE UP
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 24, fontWeight: 700, color: '#161616', marginTop: 14 }}>
+                    他付出的，是三十年的陪伴
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#5C5C5C', lineHeight: 1.5, marginTop: 16 }}>
+                    爱人李世英结婚八年后才知道丈夫做什么；三个女儿成长中缺失的重要时刻；父亲临终，他都无法回家奔丧。整整三十年，家中书桌上只有一个信箱。
+                </Text>
+            </Box>
+
+            <Box style={{ width: 565, height: 240, background: '#161616', padding: 22, flexDirection: 'column' }}>
+                <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2, color: '#A3A3A3' }}>
+                    WHAT HE CHOSE
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 24, fontWeight: 700, color: '#FFFFFF', marginTop: 14 }}>
+                    他选择的，是国家的海疆安宁
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#A3A3A3', lineHeight: 1.5, marginTop: 16 }}>
+                    没有国哪有家，没有家哪有孝。他恪守了严守机密的承诺，把一生最好的年华交给了看不见的岗位，也把「先国后家」写进了自己的选择。
+                </Text>
+            </Box>
+        </Box>
+    </Box>
+
+    {/* 页尾 */}
+    <Box style={{ position: 'absolute', left: 60, right: 60, bottom: 24, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 17, color: '#5C5C5C' }}>
+            图片来源：中国军网 · 追思仪式现场
+        </Text>
+        <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 1.4, color: '#5C5C5C' }}>
+            08 / 10
+        </Text>
+    </Box>
+</Slide>

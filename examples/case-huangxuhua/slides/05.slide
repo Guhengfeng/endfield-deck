@@ -1,0 +1,107 @@
+<Slide notes={`没有计算机，他和团队就依靠算盘、计算尺，一点点演算核潜艇上数以万计的关键数据。每一组数字由两组人分别计算，答案相同才能通过，常常为了一个数据日夜不停地计算。为了保证潜艇安全，他们还采取用秤称重的方法：所有上艇设备都要过秤，安装中的边角余料也要一一过秤，连着几年天天如此。艇内一百多公里长的电缆和管道，就靠这种最土的办法，各就其位。用最土的办法解决最尖端的技术问题，这就是核潜艇团队克难攻坚的法宝。`} style={{
+    width: 1280,
+    height: 720,
+    padding: 60,
+    background: '#F4F4F2',
+    fontFamily: 'Noto Sans SC',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    {/* 页眉 */}
+    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 16, height: 34 }}>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 62, height: 30, background: '#161616' }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, color: '#FFFFFF', letterSpacing: 1 }}>
+                No.05
+            </Text>
+        </Box>
+        <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.6, color: '#5C5C5C' }}>
+            // ABACUS AND SCALE
+        </Text>
+    </Box>
+
+    <Box style={{ marginTop: 20 }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 40, fontWeight: 900, color: '#161616', lineHeight: 1.2 }}>
+            算盘、计算尺与一杆秤
+        </Text>
+    </Box>
+    <Box style={{ width: 1160, height: 1, background: '#D9D9D6', marginTop: 16 }} />
+
+    {/* 主体：上段（算盘+数据）下段（秤+图） */}
+    <Box style={{ flexDirection: 'column', marginTop: 24, height: 444 }}>
+        {/* 上段 */}
+        <Box style={{ flexDirection: 'row', gap: 28, height: 210 }}>
+            <Box style={{ width: 486, height: 210, background: '#FFFFFF', padding: 22, flexDirection: 'column' }}>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                    <Box style={{ width: 32, height: 32, background: '#FFFA00', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ fontFamily: 'Saira', fontSize: 20, fontWeight: 900, color: '#161616' }}>
+                            01
+                        </Text>
+                    </Box>
+                    <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 26, fontWeight: 700, color: '#161616' }}>
+                        算盘演算
+                    </Text>
+                </Box>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#5C5C5C', lineHeight: 1.5, marginTop: 12 }}>
+                    没有手摇计算机，初期只能依靠算盘与计算尺，一遍遍演算核潜艇上数以万计的关键数据。每一组数字由两组人分别计算，答案相同才能通过，常常为了一个数据日夜不停地计算。
+                </Text>
+            </Box>
+
+            <Box style={{ width: 310, height: 210, flexDirection: 'column', justifyContent: 'center', gap: 6 }}>
+                <Text style={{ fontFamily: 'Saira', fontSize: 64, fontWeight: 900, color: '#161616', lineHeight: 1 }}>
+                    2 组
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#5C5C5C', lineHeight: 1.5 }}>
+                    两拨人分别算，答案一致才予通过
+                </Text>
+            </Box>
+
+            <Box style={{ width: 308, height: 210, flexDirection: 'column', justifyContent: 'center', gap: 6 }}>
+                <Text style={{ fontFamily: 'Saira', fontSize: 64, fontWeight: 900, color: '#161616', lineHeight: 1 }}>
+                    100+ km
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#5C5C5C', lineHeight: 1.5 }}>
+                    艇内电缆管道总长，各就其位
+                </Text>
+            </Box>
+        </Box>
+
+        {/* 下段 */}
+        <Box style={{ flexDirection: 'row', gap: 28, height: 210, marginTop: 24 }}>
+            <Box style={{ width: 446, height: 210, background: '#161616', padding: 22, flexDirection: 'column' }}>
+                <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                    <Box style={{ width: 32, height: 32, background: '#FFFA00', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ fontFamily: 'Saira', fontSize: 20, fontWeight: 900, color: '#161616' }}>
+                            02
+                        </Text>
+                    </Box>
+                    <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 26, fontWeight: 700, color: '#FFFFFF' }}>
+                        一杆秤称到底
+                    </Text>
+                </Box>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 20, color: '#A3A3A3', lineHeight: 1.5, marginTop: 12 }}>
+                    所有上艇设备都要过秤，安装中的边角余料也要一一过秤。整整几年，建造过程天天如此，使核潜艇下水后的数值和设计值几乎吻合。
+                </Text>
+            </Box>
+
+            <Box style={{ width: 686, height: 210, position: 'relative', overflow: 'hidden', background: '#E4E4E0' }}>
+                <Image src="assets/sub_deck.jpg" style={{ width: 686, height: 210, objectFit: 'cover', objectPosition: 'center 40%' }} />
+                <Box style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, background: '#FFFA00' }} />
+                <Box style={{ position: 'absolute', right: 0, bottom: 0, background: '#161616', paddingLeft: 16, paddingRight: 16, paddingTop: 8, paddingBottom: 8 }}>
+                    <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 16, color: '#FFFFFF' }}>
+                        退役核潜艇甲板实拍 · 中国军网
+                    </Text>
+                </Box>
+            </Box>
+        </Box>
+    </Box>
+
+    {/* 页尾 */}
+    <Box style={{ position: 'absolute', left: 60, right: 60, bottom: 24, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 17, color: '#5C5C5C' }}>
+            资料来源：人民日报《终生报国不言悔》
+        </Text>
+        <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 1.4, color: '#5C5C5C' }}>
+            05 / 10
+        </Text>
+    </Box>
+</Slide>

@@ -1,0 +1,99 @@
+<Slide notes={`1988年，核潜艇极限深潜试验，风险极高。美国曾有一艘核潜艇在深潜试验中沉没，艇上100多人无一生还。试验前，个别人给家里写信，那其实就是遗书，宿舍里有人在唱《血染的风采》。年过花甲的黄旭华毅然选择亲自随艇下潜，成为世界上核潜艇总设计师亲自参加极限深潜试验的第一人。他说：这次深潜试验绝不是要我们去光荣，而是把试验数据一个不漏拿回来；我下去不仅可以稳定人心，更重要的是万一出现不正常情况，可以协助艇上及时采取措施。我既是总设计师，更要为艇上170多个参试人员的生命安全负责到底。`} style={{
+    width: 1280,
+    height: 720,
+    padding: 0,
+    background: '#161616',
+    fontFamily: 'Noto Sans SC',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    {/* 满版海面图（已含左深右浅渐变蒙层，保证文字可读） */}
+    <Image src="assets/sub_sea_scrim.jpg" style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: 1280,
+        height: 720,
+        objectFit: 'cover',
+    }} />
+
+    {/* 页眉 */}
+    <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 16, height: 34, marginLeft: 60, marginTop: 60, position: 'relative', zIndex: 2 }}>
+        <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: 62, height: 30, background: '#FFFA00' }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, color: '#161616', letterSpacing: 1 }}>
+                No.06
+            </Text>
+        </Box>
+        <Text style={{ fontFamily: 'Saira', fontSize: 16, fontWeight: 700, letterSpacing: 2.6, color: '#A3A3A3' }}>
+            // DEEP DIVE 1988
+        </Text>
+    </Box>
+
+    {/* 主体 + 题诗：流式布局，题诗自然沉底 */}
+    <Box style={{
+        position: 'absolute',
+        left: 60,
+        top: 104,
+        width: 700,
+        flexDirection: 'column',
+        zIndex: 2,
+    }}>
+        <Box style={{ flexDirection: 'column' }}>
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 48, fontWeight: 900, color: '#FFFFFF', lineHeight: 1.22 }}>
+                年过花甲，总师亲自随艇下潜
+            </Text>
+            <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 22, color: '#A3A3A3', lineHeight: 1.56, marginTop: 14 }}>
+                1988 年核潜艇极限深潜试验风险极高，国外曾发生过深潜失事沉没的悲剧。试验前，个别人给家里写信，那其实就是遗书，宿舍里有人在唱《血染的风采》。年过花甲的黄旭华毅然选择亲自随艇下潜，成为世界上核潜艇总设计师亲自参加极限深潜试验的第一人。
+            </Text>
+
+            <Box style={{ flexDirection: 'row', gap: 26, marginTop: 16 }}>
+                {[
+                    ['1 t', '极限深度下扑克牌大小的钢板承受压力'],
+                    ['170+', '艇上参试人员生命安全由他负责到底'],
+                    ['1963', '美国核潜艇深潜沉没，100 多人无一生还'],
+                ].map((row, i) => (
+                    <Box key={i} style={{ width: 216, flexDirection: 'column', gap: 6 }}>
+                        <Text style={{ fontFamily: 'Saira', fontSize: 46, fontWeight: 900, color: '#FFFA00', lineHeight: 1 }}>
+                            {row[0]}
+                        </Text>
+                        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 18, color: '#A3A3A3', lineHeight: 1.45 }}>
+                            {row[1]}
+                        </Text>
+                    </Box>
+                ))}
+            </Box>
+        </Box>
+    </Box>
+
+    {/* 题诗：绝对定位锚定在页脚上方，避免与页尾重叠 */}
+    <Box style={{
+        position: 'absolute',
+        left: 60,
+        bottom: 64,
+        width: 700,
+        flexDirection: 'column',
+        gap: 7,
+        zIndex: 2,
+    }}>
+        <Box style={{ width: 48, height: 4, background: '#FFFA00' }} />
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 32, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.26 }}>
+            花甲痴翁，志探龙宫。
+        </Text>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 32, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.26 }}>
+            惊涛骇浪，乐在其中！
+        </Text>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 17, color: '#A3A3A3', marginTop: 1 }}>
+            —— 黄旭华于极限深潜试验成功后即兴题诗
+        </Text>
+    </Box>
+
+    {/* 页尾 */}
+    <Box style={{ position: 'absolute', left: 60, bottom: 24, zIndex: 2, flexDirection: 'row', alignItems: 'center', gap: 24 }}>
+        <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 17, color: '#A3A3A3' }}>
+            094 型核潜艇海面航行实拍
+        </Text>
+        <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 1.4, color: '#A3A3A3' }}>
+            06 / 10
+        </Text>
+    </Box>
+</Slide>

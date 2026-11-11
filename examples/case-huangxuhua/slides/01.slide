@@ -1,0 +1,151 @@
+<Slide notes={`各位好。今天我分享的，是共和国勋章获得者、中国第一代核潜艇总设计师黄旭华院士的故事。他用三十年隐姓埋名，写下了一个真正把国家安危放在第一位的传奇。接下来，我们一起走进这段深潜三十载的人生。`} style={{
+    width: 1280,
+    height: 720,
+    padding: 0,
+    background: '#F4F4F2',
+    fontFamily: 'Noto Sans SC',
+    position: 'relative',
+    flexDirection: 'row',
+}}>
+    {/* 等高线底纹 */}
+    <Image src="assets/contour_b.png" style={{
+        position: 'absolute',
+        left: -70,
+        bottom: -90,
+        width: 560,
+        height: 420,
+        opacity: 0.1,
+        objectFit: 'cover',
+    }} />
+
+    {/* 左：文字区 */}
+    <Box style={{
+        width: 795,
+        height: 720,
+        paddingLeft: 60,
+        paddingRight: 44,
+        paddingTop: 60,
+        paddingBottom: 60,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        position: 'relative',
+        zIndex: 2,
+    }}>
+        {/* 三色条 + 眉标 */}
+        <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 18 }}>
+            <Box style={{ flexDirection: 'row', width: 78, height: 4 }}>
+                <Box style={{ width: 26, height: 4, background: '#FF00F0' }} />
+                <Box style={{ width: 26, height: 4, background: '#FFFA00' }} />
+                <Box style={{ width: 26, height: 4, background: '#00FFA2' }} />
+            </Box>
+            <Text style={{
+                fontFamily: 'Saira',
+                fontSize: 16,
+                fontWeight: 700,
+                letterSpacing: 2.6,
+                color: '#5C5C5C',
+            }}>
+                MODEL OF THE ERA
+            </Text>
+        </Box>
+
+        {/* 主标题组 */}
+        <Box style={{ flexDirection: 'column', height: 412 }}>
+            <Text style={{
+                fontFamily: 'Noto Sans SC',
+                fontSize: 64,
+                fontWeight: 900,
+                color: '#161616',
+                lineHeight: 1.12,
+                letterSpacing: 2,
+            }}>
+                此生属于祖国
+            </Text>
+            <Box style={{ width: 116, height: 6, background: '#FFFA00', marginTop: 22, marginBottom: 22 }} />
+            <Text style={{
+                fontFamily: 'Noto Sans SC',
+                fontSize: 26,
+                fontWeight: 700,
+                color: '#161616',
+                lineHeight: 1.4,
+            }}>
+                黄旭华 · 中国第一代核潜艇总设计师
+            </Text>
+            <Text style={{
+                fontFamily: 'Noto Sans SC',
+                fontSize: 21,
+                color: '#5C5C5C',
+                lineHeight: 1.62,
+                marginTop: 14,
+                width: 600,
+            }}>
+                隐姓埋名三十载，以身许国铸海基核盾。1958 至 1988，从一张白纸到极限深潜，他以算盘与一杆秤，为中国造出第一艘核潜艇。<br/>他用三十年隐姓埋名，写下了一个真正把国家安危放在第一位的传奇。
+            </Text>
+        </Box>
+
+        {/* 信息层 */}
+        <Box style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 36 }}>
+            <Box style={{ flexDirection: 'column', gap: 6 }}>
+                <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 2.2, color: '#5C5C5C' }}>
+                    REPUBLIC MEDAL
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 21, fontWeight: 700, color: '#161616' }}>
+                    共和国勋章获得者
+                </Text>
+            </Box>
+            <Box style={{ width: 1, height: 44, background: '#D9D9D6' }} />
+            <Box style={{ flexDirection: 'column', gap: 6 }}>
+                <Text style={{ fontFamily: 'Saira', fontSize: 17, fontWeight: 700, letterSpacing: 2.2, color: '#5C5C5C' }}>
+                    1926 — 2025
+                </Text>
+                <Text style={{ fontFamily: 'Noto Sans SC', fontSize: 21, fontWeight: 700, color: '#161616' }}>
+                    广东海丰 · 享年 99 岁
+                </Text>
+            </Box>
+        </Box>
+    </Box>
+
+    {/* 右：人像满高出血 */}
+    <Box style={{
+        width: 485,
+        height: 720,
+        position: 'relative',
+        background: '#E4E4E0',
+        overflow: 'hidden',
+    }}>
+        <Image src="assets/portrait_model.jpg" style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: 485,
+            height: 720,
+            objectFit: 'cover',
+            objectPosition: 'center top',
+        }} />
+        {/* 墨底编号块 + 黄条 */}
+        <Box style={{
+            position: 'absolute',
+            right: 0,
+            bottom: 0,
+            width: 120,
+            height: 54,
+            background: '#161616',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 3,
+        }}>
+            <Text style={{ fontFamily: 'Saira', fontSize: 24, fontWeight: 700, color: '#FFFFFF', letterSpacing: 1.5 }}>
+                No.01
+            </Text>
+        </Box>
+        <Box style={{
+            position: 'absolute',
+            right: 0,
+            bottom: 54,
+            width: 120,
+            height: 18,
+            background: '#FFFA00',
+            zIndex: 3,
+        }} />
+    </Box>
+</Slide>
