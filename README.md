@@ -244,20 +244,27 @@ python scripts/clone_case.py --dst ./slides --accent "#A62B1F"
 
 ## 发布与分发
 
-当前版本：**v0.1.0**（仓库内已打同名 tag）。
+当前版本：**v0.1.1**（仓库内已打同名 tag）。
 
 | 产物 | 用途 |
 |---|---|
 | `endfield-deck/` 整个目录 | 直接放进 `~/.workbuddy/skills/` 或任一项目的 `.workbuddy/skills/` |
-| `endfield-deck-v0.1.0.zip` | 一键分发包（由 `git archive` 生成，路径前缀 `endfield-deck/`，解压即装） |
+| `endfield-deck-v0.1.1.zip` | 一键分发包（由 `git archive` 生成，路径前缀 `endfield-deck/`，解压即装） |
 
 zip 包的生成方式：
 
 ```bash
-git archive --format=zip --prefix=endfield-deck/ -o endfield-deck-v0.1.0.zip v0.1.0
+git archive --format=zip --prefix=endfield-deck/ -o endfield-deck-v0.1.1.zip v0.1.1
 ```
 
-发布到 GitHub / SkillHub 时：把 `endfield-deck/` 作为仓库根目录推上去（或直接上传 zip），tag `v0.1.0` 作为首个发布点。
+发布到 GitHub / SkillHub 时：把 `endfield-deck/` 作为仓库根目录推上去（或直接上传 zip），tag `v0.1.1` 作为发布点。
+
+### 版本记录
+
+| 版本 | 内容 |
+|---|---|
+| `v0.1.1` | 新增方案库（`references/variants-gallery.md`：11 个配色/版式/底色方案 + 选型决策树）、非 PPT 工作流 Playbook（`references/workflow-playbooks.md`）、可克隆参考案例（`examples/case-huangxuhua/`）、`clone_case.py` / `make_gallery.py` |
+| `v0.1.0` | 首版：主题色引擎、构建脚本、几何+像素体检、13 条实战陷阱、四步验收门禁 |
 
 ---
 
